@@ -2,18 +2,19 @@
   "name": "ember-source-channel-url",
   "version": "1.0.0",
   "description": "Determine the URL to a given Ember channels (beta, canary, etc) latest tarball.",
-  "main": "src/index.js",
-  "author": "Robert Jackson <me@rwjblue.com>",
   "license": "MIT",
-  "engines": {
-    "node": ">= 4"
-  },
-  "scripts": {
-    "test": "qunit tests/**/*-test.js"
-  },
+  "author": "Robert Jackson <me@rwjblue.com>",
   "files": [
     "src/"
   ],
+  "main": "src/index.js",
+  "repository": "git@github.com:rwjblue/ember-source-channel-url.git",
+  "scripts": {
+    "test": "qunit tests/**/*-test.js"
+  },
+  "dependencies": {
+    "got": "^8.0.1"
+  },
   "devDependencies": {
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
@@ -25,7 +26,7 @@
     "qunit-eslint": "^2.0.0",
     "rsvp": "^4.7.0"
   },
-  "dependencies": {
-    "got": "^8.0.1"
+  "engines": {
+    "node": ">= 4"
   }
 }

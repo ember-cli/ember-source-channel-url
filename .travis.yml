@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "4"
+  - "6"
+  - "8"
+  - "9"
+
+cache:
+  yarn: true
+
+branches:
+  only:
+    - master
+
+before_script:
+  # ensure we are testing against latest versions of all deps when using Yarn
+  - yarn upgrade

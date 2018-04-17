@@ -1,4 +1,5 @@
 'use strict';
+
 const got = require('got');
 const proxy = require('./proxy');
 const httpsProxy = process.env.HTTPS_PROXY || process.env.https_proxy;

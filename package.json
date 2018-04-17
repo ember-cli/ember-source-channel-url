@@ -15,7 +15,10 @@
     "test": "qunit tests/**/*-test.js"
   },
   "dependencies": {
-    "got": "^8.0.1"
+    "caw": "^2.0.1",
+    "got": "^6.3.0",
+	"https-proxy-agent": "^2.1.1",
+	"should-proxy": "^1.0.4"
   },
   "devDependencies": {
     "eslint": "^4.15.0",

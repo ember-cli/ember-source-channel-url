@@ -15,7 +15,7 @@
     "test": "qunit tests/**/*-test.js"
   },
   "dependencies": {
-    "got": "^8.0.1"
+    "got": "^9.4.0"
   },
   "devDependencies": {
     "eslint": "^5.10.0",

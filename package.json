@@ -18,7 +18,7 @@
     "got": "^8.0.1"
   },
   "devDependencies": {
-    "eslint": "^4.15.0",
+    "eslint": "^5.10.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.4.0",

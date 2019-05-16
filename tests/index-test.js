@@ -120,6 +120,22 @@ QUnit.module('ember-source-channel-url', function(hooks) {
       });
     });
 
+    QUnit.test('preserves line ending when updating package.json', function(assert) {
+      fs.writeFileSync(
+        'package.json',
+        JSON.stringify({ dependencies: { 'ember-source': '^3.10.0' } }, null, 2) + '\n',
+        { encoding: 'utf8' }
+      );
+
+      return execa(EXECUTABLE_PATH, ['canary', '--write']).then(results => {
+        assert.ok(results.stdout.includes(this.expectedURL), 'URL is present in stdout');
+
+        let expected =
+          JSON.stringify({ dependencies: { 'ember-source': this.expectedURL } }, null, 2) + '\n';
+        assert.deepEqual(fs.readFileSync('package.json', { encoding: 'utf8' }), expected);
+      });
+    });
+
     QUnit.test('fails when package.json is missing', function(assert) {
       return execa(EXECUTABLE_PATH, ['canary', '--write']).catch(results => {
         assert.ok(results.stdout.includes(this.expectedURL), 'URL is present in stdout');

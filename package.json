@@ -12,6 +12,7 @@
   "bin": "./bin/ember-source-channel-url",
   "repository": "git@github.com:rwjblue/ember-source-channel-url.git",
   "scripts": {
+    "lint:js": "eslint .",
     "test": "qunit tests/**/*-test.js"
   },
   "dependencies": {

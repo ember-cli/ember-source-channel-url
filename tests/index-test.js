@@ -62,6 +62,17 @@ QUnit.module('ember-source-channel-url', function(hooks) {
       });
     });
 
+    QUnit.test('when the terminal is not a TTY return only the URL', function(assert) {
+      let file = tmp.fileSync();
+      return execa(EXECUTABLE_PATH, ['canary'], { stdout: file.fd }).then(() => {
+        assert.equal(
+          fs.readFileSync(file.name, { encoding: 'utf8' }),
+          this.expectedURL,
+          'stdout is the URL'
+        );
+      });
+    });
+
     QUnit.test('updates local package.json when -w is passed (dependencies)', function(assert) {
       fs.writeFileSync(
         'package.json',

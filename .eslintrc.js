@@ -2,7 +2,7 @@ module.exports = {
   root: true,
       parserOptions: {
         sourceType: 'script',
-        ecmaVersion: 2015
+        ecmaVersion: 2018
       },
   plugins: [
     'node',
@@ -17,11 +17,7 @@ module.exports = {
     node: true
   },
   rules: {
-    'prettier/prettier': ['error', {
-      singleQuote: true,
-      trailingComma: 'es5',
-      printWidth: 100,
-    }],
+    'prettier/prettier': 'error',
   },
   overrides: [
     // test files

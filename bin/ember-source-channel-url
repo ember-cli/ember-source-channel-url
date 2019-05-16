@@ -37,11 +37,12 @@ EXAMPLE:
 `);
 }
 
-if (['release', 'beta', 'canary'].indexOf(channel) === -1) {
-  printUsage();
-  process.exitCode = 1;
-} else {
-  getChannelURL(channel).then(url => {
+async function main() {
+  if (['release', 'beta', 'canary'].indexOf(channel) === -1) {
+    printUsage();
+    process.exitCode = 1;
+  } else {
+    let url = await getChannelURL(channel);
     if (process.stdout.isTTY) {
       console.log(
         `The URL for the latest tarball from ember-source's ${channel} channel is:\n\n\t${url}\n`
@@ -85,5 +86,7 @@ if (['release', 'beta', 'canary'].indexOf(channel) === -1) {
         process.exitCode = 3;
       }
     }
-  });
+  }
 }
+
+main();

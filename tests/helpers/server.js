@@ -4,7 +4,7 @@ const http = require('http');
 const RSVP = require('rsvp');
 const getPort = require('get-port');
 
-const host = module.exports.host = 'localhost';
+const host = (module.exports.host = 'localhost');
 
 module.exports.createServer = function() {
   return getPort().then(port => {

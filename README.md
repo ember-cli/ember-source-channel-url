@@ -7,9 +7,8 @@ Retrieve a URL that can be used to reference a tarball representing the latest
 
 ### Command Line API
 
-```js
-npm install -g ember-source-channel-url
-ember-source-channel-url canary
+```
+npx ember-source-channel-url canary
 ```
 
 Will print out:
@@ -19,7 +18,15 @@ The URL for the latest tarball from ember-source's canary channel is:
 
         https://s3.amazonaws.com/builds.emberjs.com/canary/shas/<RANDOM SHA HERE>.tgz
 ```
+
+If you'd like to update `ember-source` in your `package.json` with the new URL, you can use the `--write` option:
+
+```
+npx ember-source-channel-url canary --write
+```
+
 ### Progamatic API
+
 ```js
 const getURLFor = require('ember-source-channel-url');
 

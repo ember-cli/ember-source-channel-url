@@ -1,6 +1,6 @@
 {
   "name": "ember-source-channel-url",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Determine the URL to a given Ember channels (beta, canary, etc) latest tarball.",
   "license": "MIT",
   "author": "Robert Jackson <me@rwjblue.com>",

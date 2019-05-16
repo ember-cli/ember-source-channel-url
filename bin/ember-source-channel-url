@@ -42,9 +42,13 @@ if (['release', 'beta', 'canary'].indexOf(channel) === -1) {
   process.exitCode = 1;
 } else {
   getChannelURL(channel).then(url => {
-    console.log(
-      `The URL for the latest tarball from ember-source's ${channel} channel is:\n\n\t${url}\n`
-    );
+    if (process.stdout.isTTY) {
+      console.log(
+        `The URL for the latest tarball from ember-source's ${channel} channel is:\n\n\t${url}\n`
+      );
+    } else {
+      process.stdout.write(url);
+    }
 
     if (shouldUpdatePackage) {
       if (!fs.existsSync('package.json')) {

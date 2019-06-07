@@ -28,7 +28,7 @@
     "prettier": "^1.17.1",
     "qunit": "~2.9.2",
     "qunit-eslint": "^2.0.0",
-    "rsvp": "^4.7.0",
+    "rsvp": "^4.8.5",
     "tmp": "^0.1.0"
   },
   "engines": {

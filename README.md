@@ -25,7 +25,7 @@ If you'd like to update `ember-source` in your `package.json` with the new URL, 
 npx ember-source-channel-url canary --write
 ```
 
-### Progamatic API
+### Programmatic API
 
 ```js
 const getURLFor = require('ember-source-channel-url');

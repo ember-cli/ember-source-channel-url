@@ -661,12 +661,10 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-get-port@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/get-port/-/get-port-5.0.0.tgz#aa22b6b86fd926dd7884de3e23332c9f70c031a6"
-  integrity sha512-imzMU0FjsZqNa6BqOjbbW6w5BivHIuQKopjpPqcnx0AVHJQKCxK1O+Ab3OrVXhrekqfVMjwA9ZYu062R+KcIsQ==
-  dependencies:
-    type-fest "^0.3.0"
+get-port@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/get-port/-/get-port-5.1.0.tgz#a8f6510d0000f07d5c65653a4b0ae648fe832683"
+  integrity sha512-bjioH1E9bTQUvgaB6VycVy1QVbTZI41yTnF9qkZz6ixgy/uhCH6D63bKeZ6Code/07JYA61MeI94jSdHss8PNA==
 
 get-stdin@^6.0.0:
   version "6.0.0"
@@ -1571,11 +1569,6 @@ type-check@~0.3.2:
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
   dependencies:
     prelude-ls "~1.1.2"
-
-type-fest@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.3.1.tgz#63d00d204e059474fe5e1b7c011112bbd1dc29e1"
-  integrity sha512-cUGJnCdr4STbePCgqNFbpVNCepa+kAVohJs1sLhxzdH+gnEoOd8VhbYa7pD3zZYGiURWM2xzEII3fQcRizDkYQ==
 
 type-fest@^0.5.2:
   version "0.5.2"

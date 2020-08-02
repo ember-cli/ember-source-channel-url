@@ -1,11 +1,12 @@
 'use strict';
-const got = require('got');
+const fetch = require('node-fetch');
 
 module.exports = async function (channelType) {
   let HOST = process.env.EMBER_SOURCE_CHANNEL_URL_HOST || 'https://s3.amazonaws.com';
   let PATH = 'builds.emberjs.com';
 
-  const result = await got(`${HOST}/${PATH}/${channelType}.json`, { json: true });
+  const response = await fetch(`${HOST}/${PATH}/${channelType}.json`);
+  const result = await response.json();
 
-  return `${HOST}/${PATH}${result.body.assetPath}`;
+  return `${HOST}/${PATH}${result.assetPath}`;
 };

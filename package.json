@@ -16,22 +16,22 @@
     "test": "qunit tests/**/*-test.js"
   },
   "dependencies": {
-    "got": "^8.0.1"
+    "got": "^11.5.1"
   },
   "devDependencies": {
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "execa": "^2.1.0",
+    "execa": "^4.0.3",
     "get-port": "^5.1.1",
     "prettier": "^2.0.5",
-    "qunit": "~2.9.3",
+    "qunit": "~2.10.1",
     "qunit-eslint": "^2.0.0",
-    "release-it": "^13.6.5",
+    "release-it": "^13.6.6",
     "release-it-lerna-changelog": "^2.3.0",
     "rsvp": "^4.8.5",
-    "tmp": "^0.1.0"
+    "tmp": "^0.2.1"
   },
   "engines": {
     "node": "10.* || 12.* || >= 14"

@@ -6,8 +6,8 @@ const getPort = require('get-port');
 
 const host = (module.exports.host = 'localhost');
 
-module.exports.createServer = function() {
-  return getPort().then(port => {
+module.exports.createServer = function () {
+  return getPort().then((port) => {
     let s = http.createServer((req, resp) => s.emit(req.url, req, resp));
 
     s.host = host;

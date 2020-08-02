@@ -13,12 +13,12 @@ tmp.setGracefulCleanup();
 const ROOT = process.cwd();
 const EXECUTABLE_PATH = path.join(__dirname, '..', 'bin', 'ember-source-channel-url');
 
-QUnit.module('ember-source-channel-url', function(hooks) {
+QUnit.module('ember-source-channel-url', function (hooks) {
   function randomString(length) {
     return crypto.randomBytes(Math.ceil(length / 2)).toString('hex');
   }
 
-  hooks.beforeEach(async function() {
+  hooks.beforeEach(async function () {
     let dir = tmp.dirSync();
     process.chdir(dir.name);
 
@@ -38,28 +38,26 @@ QUnit.module('ember-source-channel-url', function(hooks) {
     return server.listen(server.port);
   });
 
-  hooks.afterEach(function() {
+  hooks.afterEach(function () {
     process.chdir(ROOT);
 
     return this.server.close();
   });
 
-  QUnit.test('works', async function(assert) {
-    let expected = `http://${this.server.host}:${this.server.port}/builds.emberjs.com${
-      this.assetPath
-    }`;
+  QUnit.test('works', async function (assert) {
+    let expected = `http://${this.server.host}:${this.server.port}/builds.emberjs.com${this.assetPath}`;
 
     let actual = await getChannelURL('canary');
     assert.equal(actual, expected);
   });
 
-  QUnit.module('binary', function() {
-    QUnit.test('works', async function(assert) {
+  QUnit.module('binary', function () {
+    QUnit.test('works', async function (assert) {
       let results = await execa(EXECUTABLE_PATH, ['canary']);
       assert.ok(results.stdout.includes(this.expectedURL), 'URL is present in stdout');
     });
 
-    QUnit.test('when the terminal is not a TTY return only the URL', async function(assert) {
+    QUnit.test('when the terminal is not a TTY return only the URL', async function (assert) {
       let file = tmp.fileSync();
       await execa(EXECUTABLE_PATH, ['canary'], { stdout: file.fd });
       assert.equal(
@@ -69,7 +67,7 @@ QUnit.module('ember-source-channel-url', function(hooks) {
       );
     });
 
-    QUnit.test('updates local package.json when -w is passed (dependencies)', async function(
+    QUnit.test('updates local package.json when -w is passed (dependencies)', async function (
       assert
     ) {
       fs.writeFileSync(
@@ -87,7 +85,7 @@ QUnit.module('ember-source-channel-url', function(hooks) {
       });
     });
 
-    QUnit.test('updates local package.json when --write is passed (dependencies)', async function(
+    QUnit.test('updates local package.json when --write is passed (dependencies)', async function (
       assert
     ) {
       fs.writeFileSync(
@@ -107,7 +105,7 @@ QUnit.module('ember-source-channel-url', function(hooks) {
 
     QUnit.test(
       'updates local package.json when --write is passed (devDependencies)',
-      async function(assert) {
+      async function (assert) {
         fs.writeFileSync(
           'package.json',
           JSON.stringify({ devDependencies: { 'ember-source': '^3.10.0' } }),
@@ -124,7 +122,7 @@ QUnit.module('ember-source-channel-url', function(hooks) {
       }
     );
 
-    QUnit.test('preserves line ending when updating package.json', async function(assert) {
+    QUnit.test('preserves line ending when updating package.json', async function (assert) {
       fs.writeFileSync(
         'package.json',
         JSON.stringify({ dependencies: { 'ember-source': '^3.10.0' } }, null, 2) + '\n',
@@ -138,7 +136,7 @@ QUnit.module('ember-source-channel-url', function(hooks) {
       assert.deepEqual(fs.readFileSync('package.json', { encoding: 'utf8' }), expected);
     });
 
-    QUnit.test('fails when package.json is missing', async function(assert) {
+    QUnit.test('fails when package.json is missing', async function (assert) {
       try {
         await execa(EXECUTABLE_PATH, ['canary', '--write']);
       } catch (results) {
@@ -150,7 +148,7 @@ QUnit.module('ember-source-channel-url', function(hooks) {
       }
     });
 
-    QUnit.test('fails when ember-source is not a dep', async function(assert) {
+    QUnit.test('fails when ember-source is not a dep', async function (assert) {
       fs.writeFileSync('package.json', JSON.stringify({}), {
         encoding: 'utf8',
       });

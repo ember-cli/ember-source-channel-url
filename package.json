@@ -19,13 +19,13 @@
     "got": "^8.0.1"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "execa": "^2.1.0",
     "get-port": "^5.1.1",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "qunit": "~2.9.3",
     "qunit-eslint": "^2.0.0",
     "release-it": "^13.6.5",

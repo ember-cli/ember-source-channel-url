@@ -2,15 +2,15 @@
   "name": "ember-source-channel-url",
   "version": "2.0.1",
   "description": "Determine the URL to a given Ember channels (beta, canary, etc) latest tarball.",
+  "repository": "git@github.com:rwjblue/ember-source-channel-url.git",
   "license": "MIT",
   "author": "Robert Jackson <me@rwjblue.com>",
+  "main": "src/index.js",
+  "bin": "./bin/ember-source-channel-url",
   "files": [
     "bin/",
     "src/"
   ],
-  "main": "src/index.js",
-  "bin": "./bin/ember-source-channel-url",
-  "repository": "git@github.com:rwjblue/ember-source-channel-url.git",
   "scripts": {
     "lint:js": "eslint .",
     "test": "qunit tests/**/*-test.js"
@@ -28,10 +28,30 @@
     "prettier": "^1.19.1",
     "qunit": "~2.9.3",
     "qunit-eslint": "^2.0.0",
+    "release-it": "^13.6.5",
+    "release-it-lerna-changelog": "^2.3.0",
     "rsvp": "^4.8.5",
     "tmp": "^0.1.0"
   },
   "engines": {
     "node": "10.* || 12.* || >= 14"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   }
 }

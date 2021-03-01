@@ -28,7 +28,7 @@
     "prettier": "^2.2.1",
     "qunit": "~2.11.3",
     "qunit-eslint": "^2.0.0",
-    "release-it": "^14.2.2",
+    "release-it": "^14.4.1",
     "release-it-lerna-changelog": "^2.4.0",
     "rsvp": "^4.8.5",
     "tmp": "^0.2.1"

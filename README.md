@@ -34,3 +34,11 @@ getURLFor('canary').then((url) => {
   // use the URL here 
 });
 ```
+
+### Proxy
+
+Proxies are supported through `https_proxy`, `http_proxy`, and `no_proxy` environment variables:
+
+```
+https_proxy=http://localhost:8080 npx ember-source-channel-url canary --write
+```

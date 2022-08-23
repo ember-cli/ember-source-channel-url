@@ -16,6 +16,7 @@
     "test": "qunit tests/**/*-test.js"
   },
   "dependencies": {
+    "https-proxy-agent": "^5.0.1",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
